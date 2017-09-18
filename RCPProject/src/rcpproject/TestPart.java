@@ -20,9 +20,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.DateTime;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Shell;
 
 import com.xyz.article.wizards.HolidayWizard;
 
@@ -102,7 +100,6 @@ public class TestPart {
 		// "/com/airbus/pf/at/resources/images/splash.bmp"));
 
 	}
-	
 
 	/**
 	 * Create the actions.
@@ -173,7 +170,7 @@ public class TestPart {
 
 	@Focus
 	public void setFocus() {
-		// TODO	Set the focus to control
+		// TODO Set the focus to control
 	}
 
 }
