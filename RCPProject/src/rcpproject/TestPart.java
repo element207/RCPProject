@@ -33,8 +33,9 @@ public class TestPart {
 	 * Create contents of the view part.
 	 */
 	@PostConstruct
-	public void createControls(Composite parent) {
-		Composite container = new Composite(parent, SWT.NONE);
+	public void createControls(Composite container) {
+		// Composite container = new Composite(parent, SWT.NONE);
+		container.setBounds(0, 0, 889, 636);
 
 		Label lblNewLabel = new Label(container, SWT.WRAP);
 		lblNewLabel.setBounds(65, 73, 475, 32);
