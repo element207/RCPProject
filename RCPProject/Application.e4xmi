@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmi:id="_c3AF0MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.application" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ">
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_c3AF0cjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.window.main" label="Empty E4 Application">
-    <children xsi:type="basic:Part" xmi:id="_np72UJnzEee7EP9w-lfKbg" elementId="rcpproject.part.0" contributionURI="bundleclass://RCPProject/rcpproject.TestPart"/>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_c3AF0MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.application" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_c3AF0cjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.window.main" label="Empty E4 Application" width="1024" height="768">
+    <children xsi:type="basic:PartStack" xmi:id="_OoozQJzsEeev4exnfNHJrA" elementId="rcpproject.partstack.0">
+      <children xsi:type="basic:Part" xmi:id="_np72UJnzEee7EP9w-lfKbg" elementId="rcpproject.part.wizard" contributionURI="bundleclass://RCPProject/rcpproject.TestPart" label="Wizard" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ"/>
+      <children xsi:type="basic:Part" xmi:id="_P_ss0JzsEeev4exnfNHJrA" elementId="rcpproject.part.keybinding" contributionURI="bundleclass://RCPProject/rcpproject.KeyBindingPart" label="KeyBinding" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ"/>
+    </children>
+    <mainMenu xmi:id="_VeEvIJzuEeev4exnfNHJrA" elementId="rcpproject.menu.0">
+      <children xsi:type="menu:Menu" xmi:id="_YJCgkJzuEeev4exnfNHJrA" elementId="rcpproject.menu.file" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_aSh8oJzuEeev4exnfNHJrA" elementId="rcpproject.handledmenuitem.file.exit" label="Eixt" command="_5eZ0sJzsEeev4exnfNHJrA"/>
+      </children>
+    </mainMenu>
   </children>
+  <handlers xmi:id="_e-MP8JztEeev4exnfNHJrA" elementId="rcpproject.handler.file.exit" contributionURI="bundleclass://RCPProject/rcpproject.handlers.ExitHandler" command="_5eZ0sJzsEeev4exnfNHJrA"/>
+  <bindingTables xmi:id="_piawwJz6Eeev4exnfNHJrA" elementId="rcpproject.bindingtable.0" bindingContext="_c3AF2cjYEeSyMNYR5xypkQ">
+    <bindings xmi:id="_t5MjwJz6Eeev4exnfNHJrA" elementId="rcpproject.keybinding.exit" keySequence="M1+M2+M3+X" command="_5eZ0sJzsEeev4exnfNHJrA"/>
+  </bindingTables>
   <rootContext xmi:id="_c3AF2cjYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
     <children xmi:id="_c3AF2sjYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
     <children xmi:id="_c3AF28jYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
   </rootContext>
+  <commands xmi:id="_5eZ0sJzsEeev4exnfNHJrA" elementId="org.eclipse.ui.file.exit" commandName="Exit"/>
   <addons xmi:id="_c3AF0sjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_c3AF08jYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_c3AF1MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
