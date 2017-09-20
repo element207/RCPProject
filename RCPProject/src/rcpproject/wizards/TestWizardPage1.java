@@ -4,7 +4,7 @@ import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 
-import rcpproject.TestPart;
+import rcpproject.parts.TestPart;
 
 public class TestWizardPage1 extends WizardPage {
 

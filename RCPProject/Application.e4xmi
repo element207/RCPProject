@@ -2,8 +2,8 @@
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_c3AF0MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.application" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ">
   <children xsi:type="basic:TrimmedWindow" xmi:id="_c3AF0cjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.window.main" label="Empty E4 Application" width="1024" height="768">
     <children xsi:type="basic:PartStack" xmi:id="_OoozQJzsEeev4exnfNHJrA" elementId="rcpproject.partstack.0">
-      <children xsi:type="basic:Part" xmi:id="_P_ss0JzsEeev4exnfNHJrA" elementId="rcpproject.part.keybinding" contributionURI="bundleclass://RCPProject/rcpproject.KeyBindingPart" label="KeyBinding" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ"/>
-      <children xsi:type="basic:Part" xmi:id="_np72UJnzEee7EP9w-lfKbg" elementId="rcpproject.part.wizard" contributionURI="bundleclass://RCPProject/rcpproject.TestPart" label="Wizard" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ"/>
+      <children xsi:type="basic:Part" xmi:id="_P_ss0JzsEeev4exnfNHJrA" elementId="rcpproject.part.keybinding" contributionURI="bundleclass://RCPProject/rcpproject.parts.KeyBindingPart" label="KeyBinding" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ"/>
+      <children xsi:type="basic:Part" xmi:id="_np72UJnzEee7EP9w-lfKbg" elementId="rcpproject.part.wizard" contributionURI="bundleclass://RCPProject/rcpproject.parts.TestPart" label="Wizard" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ"/>
     </children>
     <mainMenu xmi:id="_VeEvIJzuEeev4exnfNHJrA" elementId="rcpproject.menu.0">
       <children xsi:type="menu:Menu" xmi:id="_YJCgkJzuEeev4exnfNHJrA" elementId="rcpproject.menu.file" label="File">

@@ -4,7 +4,7 @@ import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 
-import rcpproject.KeyBindingPart;
+import rcpproject.parts.KeyBindingPart;
 
 public class TestWizardPage2 extends WizardPage {
 

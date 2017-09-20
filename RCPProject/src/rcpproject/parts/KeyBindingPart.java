@@ -1,5 +1,5 @@
 
-package rcpproject;
+package rcpproject.parts;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;

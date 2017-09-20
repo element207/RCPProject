@@ -1,4 +1,4 @@
-package rcpproject;
+package rcpproject.parts;
 
 import java.util.Locale;
 
