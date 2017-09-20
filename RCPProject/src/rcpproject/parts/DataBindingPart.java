@@ -5,10 +5,13 @@ import java.util.Date;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.beans.BeanProperties;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
@@ -29,7 +32,7 @@ public class DataBindingPart {
 	private Text txtSummary_1;
 	private Text txtDescription_1;
 
-	Todo todo = new Todo(1, "Summary", "Description", true, new Date());;
+	Todo todo = new Todo(1, "Summary", "Description", true, new Date());
 	private DateTime dateTime;
 	private Button btnDone;
 	private DateTime dateTime_1;
@@ -91,12 +94,22 @@ public class DataBindingPart {
 		lblDueDate_1.setText("Due Date");
 
 		dateTime_1 = new DateTime(composite_modifydata, SWT.BORDER);
+		dateTime_1.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
 		new Label(composite_modifydata, SWT.NONE);
 
 		btnDone_1 = new Button(composite_modifydata, SWT.CHECK);
 		btnDone_1.setText("Done");
 		m_bindingContext = initDataBindings();
 
+	}
+
+	@Inject
+	public void setTodo(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Todo todo) {
+		if (todo != null && this.m_bindingContext != null) {
+			this.todo = todo.copy();
+			updateUserInterface(todo);
+			;
+		}
 	}
 
 	protected DataBindingContext initDataBindings() {
@@ -133,5 +146,12 @@ public class DataBindingPart {
 		bindingContext.bindValue(observeSelectionBtnDone_1ObserveWidget, doneTodoObserveValue, null, null);
 		//
 		return bindingContext;
+	}
+
+	private void updateUserInterface(Todo todo) {
+		this.txtSummary.setText(todo.getSummary());
+		this.txtDescription.setText(todo.getDescription());
+		this.btnDone.setSelection(todo.isDone());
+		this.dateTime.setDate(1978, 1, 7);
 	}
 }

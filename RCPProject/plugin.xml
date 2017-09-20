@@ -9,10 +9,6 @@
             name="RCPProject"
             application="org.eclipse.e4.ui.workbench.swt.E4Application">
          <property
-               name="applicationCSS"
-               value="platform:/plugin/RCPProject/css/default.css">
-         </property>
-         <property
                name="appName"
                value="RCPProject">
          </property>

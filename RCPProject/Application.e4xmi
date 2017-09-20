@@ -5,6 +5,7 @@
       <children xsi:type="basic:Part" xmi:id="_P_ss0JzsEeev4exnfNHJrA" elementId="rcpproject.part.keybinding" contributionURI="bundleclass://RCPProject/rcpproject.parts.KeyBindingPart" label="KeyBinding" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ"/>
       <children xsi:type="basic:Part" xmi:id="_np72UJnzEee7EP9w-lfKbg" elementId="rcpproject.part.wizard" contributionURI="bundleclass://RCPProject/rcpproject.parts.TestPart" label="Wizard" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ"/>
       <children xsi:type="basic:Part" xmi:id="_YN9PAJ2tEeev4exnfNHJrA" elementId="rcpproject.part.databinding" contributionURI="bundleclass://RCPProject/rcpproject.parts.DataBindingPart" label="DataBinding"/>
+      <children xsi:type="basic:Part" xmi:id="_v3yMwJ29Eeev4exnfNHJrA" elementId="rcpproject.part.todooverview" contributionURI="bundleclass://RCPProject/rcpproject.parts.TodoOverviewPart" label="Todo Overview"/>
     </children>
     <mainMenu xmi:id="_VeEvIJzuEeev4exnfNHJrA" elementId="rcpproject.menu.0">
       <children xsi:type="menu:Menu" xmi:id="_YJCgkJzuEeev4exnfNHJrA" elementId="rcpproject.menu.file" label="File">
