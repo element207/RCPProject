@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_RE4OYJ9sEeeLf7ns2HVT9w">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_jW_64J9sEeeLf7ns2HVT9w" featurename="commands" parentElementId="rcpproject.application">
+    <elements xsi:type="commands:Command" xmi:id="_r5jKwJ9sEeeLf7ns2HVT9w" elementId="rcpproject.contribute.command.openmap" commandName="Open Map"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_04pzwJ9sEeeLf7ns2HVT9w" featurename="handlers" parentElementId="rcpproject.application">
+    <elements xsi:type="commands:Handler" xmi:id="_4pluwJ9sEeeLf7ns2HVT9w" elementId="rcpproject.contribute.handler.0" contributionURI="bundleclass://RCPProject.contribute/RCPProject.contribute.handlers.OpenMapHandler" command="_r5jKwJ9sEeeLf7ns2HVT9w"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_BOVXAJ9tEeeLf7ns2HVT9w" featurename="children" parentElementId="rcpproject.menu.main">
+    <elements xsi:type="menu:Menu" xmi:id="_o7b-YJ9tEeeLf7ns2HVT9w" elementId="rcpproject.contribute.menu.map" label="Map">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_srkoIJ9tEeeLf7ns2HVT9w" elementId="rcpproject.contribute.handledmenuitem.openmap" label="Open Map" command="_r5jKwJ9sEeeLf7ns2HVT9w"/>
+    </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_yw1gwJ9uEeeLf7ns2HVT9w" featurename="children" parentElementId="rcpproject.partstack.0">
+    <elements xsi:type="basic:Part" xmi:id="_72jvIJ9uEeeLf7ns2HVT9w" elementId="rcpproject.contribute.part.contributepart" label="Contribute Part"/>
+  </fragments>
+</fragment:ModelFragments>

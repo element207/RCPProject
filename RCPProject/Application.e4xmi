@@ -1,23 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_c3AF0MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.application" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ">
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_c3AF0MjYEeSyMNYR5xypkQ" elementId="rcpproject.application" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ">
   <children xsi:type="basic:TrimmedWindow" xmi:id="_c3AF0cjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.window.main" label="E4 Application Test" width="1024" height="768">
-    <children xsi:type="basic:PartStack" xmi:id="_OoozQJzsEeev4exnfNHJrA" elementId="rcpproject.partstack.0">
-      <children xsi:type="basic:Part" xmi:id="_P_ss0JzsEeev4exnfNHJrA" elementId="rcpproject.part.keybinding" contributionURI="bundleclass://RCPProject/rcpproject.parts.KeyBindingPart" label="KeyBinding" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ"/>
-      <children xsi:type="basic:Part" xmi:id="_np72UJnzEee7EP9w-lfKbg" elementId="rcpproject.part.wizard" contributionURI="bundleclass://RCPProject/rcpproject.parts.TestPart" label="Wizard" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ"/>
-      <children xsi:type="basic:Part" xmi:id="_YN9PAJ2tEeev4exnfNHJrA" elementId="rcpproject.part.databinding" contributionURI="bundleclass://RCPProject/rcpproject.parts.DataBindingPart" label="DataBinding"/>
-      <children xsi:type="basic:Part" xmi:id="_v3yMwJ29Eeev4exnfNHJrA" elementId="rcpproject.part.todooverview" contributionURI="bundleclass://RCPProject/rcpproject.parts.TodoOverviewPart" label="Todo Overview"/>
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_Tt-6UJ6KEeev4exnfNHJrA" elementId="rcpproject.perspectivestack.main">
+      <children xsi:type="advanced:Perspective" xmi:id="_Zdc-kJ6KEeev4exnfNHJrA" elementId="rcpproject.perspective.wizard" label="Wizard">
+        <children xsi:type="basic:PartStack" xmi:id="_OoozQJzsEeev4exnfNHJrA" elementId="rcpproject.partstack.0">
+          <children xsi:type="basic:Part" xmi:id="_v3yMwJ29Eeev4exnfNHJrA" elementId="rcpproject.part.todooverview" contributionURI="bundleclass://RCPProject/rcpproject.parts.TodoOverviewPart" label="Todo Overview">
+            <menus xsi:type="menu:PopupMenu" xmi:id="_jDmh8J9lEeeLf7ns2HVT9w" elementId="rcpproject.popupmenu.table" label="Table Menu">
+              <children xsi:type="menu:HandledMenuItem" xmi:id="_oqt7cJ9lEeeLf7ns2HVT9w" elementId="rcpproject.handledmenuitem.deletetodo" label="Delete Todo" command="_v5C8oJ9gEeeLf7ns2HVT9w"/>
+            </menus>
+          </children>
+          <children xsi:type="basic:Part" xmi:id="_P_ss0JzsEeev4exnfNHJrA" elementId="rcpproject.part.keybinding" containerData="" contributionURI="bundleclass://RCPProject/rcpproject.parts.KeyBindingPart" label="KeyBinding" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ"/>
+          <children xsi:type="basic:Part" xmi:id="_np72UJnzEee7EP9w-lfKbg" elementId="rcpproject.part.wizard" containerData="" contributionURI="bundleclass://RCPProject/rcpproject.parts.TestPart" label="Wizard" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ"/>
+          <children xsi:type="basic:Part" xmi:id="_YN9PAJ2tEeev4exnfNHJrA" elementId="rcpproject.part.databinding" contributionURI="bundleclass://RCPProject/rcpproject.parts.DataBindingPart" label="DataBinding"/>
+          <children xsi:type="advanced:Placeholder" xmi:id="_GAiLgJ6NEeev4exnfNHJrA" elementId="rcpproject.placeholder.1" ref="_6_dDsJ6MEeev4exnfNHJrA"/>
+        </children>
+      </children>
+      <children xsi:type="advanced:Perspective" xmi:id="_fr1zcJ6KEeev4exnfNHJrA" elementId="rcpproject.perspective.test" label="Test">
+        <children xsi:type="basic:PartStack" xmi:id="_tMnQ0J6KEeev4exnfNHJrA" elementId="rcpproject.partstack.test">
+          <children xsi:type="basic:Part" xmi:id="_uCVX4J6KEeev4exnfNHJrA" elementId="rcpproject.part.test" label="Test"/>
+          <children xsi:type="advanced:Placeholder" xmi:id="_DGeOIJ6NEeev4exnfNHJrA" elementId="rcpproject.placeholder.0" ref="_6_dDsJ6MEeev4exnfNHJrA"/>
+        </children>
+      </children>
     </children>
-    <mainMenu xmi:id="_VeEvIJzuEeev4exnfNHJrA" elementId="rcpproject.menu.0">
+    <mainMenu xmi:id="_VeEvIJzuEeev4exnfNHJrA" elementId="rcpproject.menu.main">
       <children xsi:type="menu:Menu" xmi:id="_YJCgkJzuEeev4exnfNHJrA" elementId="rcpproject.menu.file" label="File">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_p8CRAJ0CEeev4exnfNHJrA" elementId="rcpproject.handledmenuitem.login" label="Login" command="_kb8FgJ0CEeev4exnfNHJrA"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_WRPHEJ0SEeev4exnfNHJrA" elementId="rcpproject.handledmenuitem.wizard" label="Wizard" command="_9D5U4J0REeev4exnfNHJrA"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_aSh8oJzuEeev4exnfNHJrA" elementId="rcpproject.handledmenuitem.file.exit" label="Eixt" command="_5eZ0sJzsEeev4exnfNHJrA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_XR0QoJ6OEeev4exnfNHJrA" elementId="rcpproject.handledmenuitem.createpart" label="Create Part" command="_RAqboJ6OEeev4exnfNHJrA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_WP5tUJ9iEeeLf7ns2HVT9w" elementId="rcpproject.handledmenuitem.delete" label="Delete" command="_v5C8oJ9gEeeLf7ns2HVT9w"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_3NTSoJ6KEeev4exnfNHJrA" elementId="rcpproject.menu.perspective" label="Perspective">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_50rkkJ6KEeev4exnfNHJrA" elementId="rcpproject.handledmenuitem.switchperspective" label="Swich Perspective" command="_BDhw4J6LEeev4exnfNHJrA"/>
       </children>
     </mainMenu>
+    <sharedElements xsi:type="basic:Part" xmi:id="_6_dDsJ6MEeev4exnfNHJrA" elementId="rcpproject.part.shared" contributionURI="bundleclass://RCPProject/rcpproject.parts.KeyBindingPart" label="Shared Part"/>
+    <trimBars xmi:id="_vKTx4J9hEeeLf7ns2HVT9w" elementId="rcpproject.trimbar.main">
+      <children xsi:type="menu:ToolBar" xmi:id="_xxVegJ9hEeeLf7ns2HVT9w" elementId="rcpproject.toolbar.main.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_0NKAsJ9hEeeLf7ns2HVT9w" elementId="rcpproject.handledtoolitem.delete" label="Delete" command="_v5C8oJ9gEeeLf7ns2HVT9w"/>
+      </children>
+    </trimBars>
   </children>
   <handlers xmi:id="_e-MP8JztEeev4exnfNHJrA" elementId="rcpproject.handler.file.exit" contributionURI="bundleclass://RCPProject/rcpproject.handlers.ExitHandler" command="_5eZ0sJzsEeev4exnfNHJrA"/>
   <handlers xmi:id="_eHu8gJ0CEeev4exnfNHJrA" elementId="rcpproject.handler.0" contributionURI="bundleclass://RCPProject/rcpproject.handlers.EnterCredentialsHandler" command="_kb8FgJ0CEeev4exnfNHJrA"/>
   <handlers xmi:id="__K7S0J0REeev4exnfNHJrA" elementId="rcpproject.handler.1" contributionURI="bundleclass://RCPProject/rcpproject.handlers.WizardHandler" command="_9D5U4J0REeev4exnfNHJrA"/>
+  <handlers xmi:id="_EMxZwJ6LEeev4exnfNHJrA" elementId="rcpproject.handler.switchperspective" contributionURI="bundleclass://RCPProject/rcpproject.handlers.PerspectiveSwitchHandler" command="_BDhw4J6LEeev4exnfNHJrA"/>
+  <handlers xmi:id="_DUBFcJ6OEeev4exnfNHJrA" elementId="rcpproject.handler.dynamic" contributionURI="bundleclass://RCPProject/rcpproject.handlers.DynamicPartHandler" command="_RAqboJ6OEeev4exnfNHJrA"/>
+  <handlers xmi:id="_fcCswJ9iEeeLf7ns2HVT9w" elementId="rcpproject.handler.deletetodo" contributionURI="bundleclass://RCPProject/rcpproject.handlers.RemoveTodoHandler" command="_v5C8oJ9gEeeLf7ns2HVT9w"/>
   <bindingTables xmi:id="_piawwJz6Eeev4exnfNHJrA" elementId="rcpproject.bindingtable.0" bindingContext="_c3AF2cjYEeSyMNYR5xypkQ">
     <bindings xmi:id="_t5MjwJz6Eeev4exnfNHJrA" elementId="rcpproject.keybinding.exit" keySequence="M1+X" command="_5eZ0sJzsEeev4exnfNHJrA"/>
   </bindingTables>
@@ -25,9 +54,15 @@
     <children xmi:id="_c3AF2sjYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
     <children xmi:id="_c3AF28jYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
   </rootContext>
+  <descriptors xmi:id="_6e0mYJ6NEeev4exnfNHJrA" elementId="rcpproject.partdescriptor.dynamic" label="Dynamic" allowMultiple="true" contributionURI="bundleclass://RCPProject/rcpproject.parts.DynamicPart"/>
   <commands xmi:id="_5eZ0sJzsEeev4exnfNHJrA" elementId="org.eclipse.ui.file.exit" commandName="Exit"/>
   <commands xmi:id="_kb8FgJ0CEeev4exnfNHJrA" elementId="rcpproject.command.login" commandName="Login"/>
   <commands xmi:id="_9D5U4J0REeev4exnfNHJrA" elementId="rcpproject.command.wizard" commandName="Wizard"/>
+  <commands xmi:id="_BDhw4J6LEeev4exnfNHJrA" elementId="rcpproject.command.switchperspective" commandName="Switch Perspective"/>
+  <commands xmi:id="_RAqboJ6OEeev4exnfNHJrA" elementId="rcpproject.command.dynamicpart" commandName="DynamicPart">
+    <parameters xmi:id="_VjBzkJ6OEeev4exnfNHJrA" elementId="rcpproject.commandparameter.0" name="Command Parameter 0"/>
+  </commands>
+  <commands xmi:id="_v5C8oJ9gEeeLf7ns2HVT9w" elementId="rcpproject.command.deletetodo" commandName="Delete Todo"/>
   <addons xmi:id="_c3AF0sjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_c3AF08jYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_c3AF1MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
@@ -35,4 +70,5 @@
   <addons xmi:id="_c3AF1sjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_c3AF18jYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
   <addons xmi:id="_c3AF2MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+  <addons xmi:id="_lB6IIJ6pEeev4exnfNHJrA" elementId="rcpproject.addon.closewindow" contributionURI="bundleclass://RCPProject/rcpproject.handlers.CloseWindowAddon"/>
 </application:Application>

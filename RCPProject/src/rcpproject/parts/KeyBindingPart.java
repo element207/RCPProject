@@ -8,6 +8,9 @@ import org.eclipse.core.commands.Command;
 import org.eclipse.core.commands.ParameterizedCommand;
 import org.eclipse.e4.core.commands.ECommandService;
 import org.eclipse.e4.core.commands.EHandlerService;
+import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.ui.di.UIEventTopic;
+import org.eclipse.e4.ui.workbench.UIEvents;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -16,6 +19,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 
 import rcpproject.dialogs.custom.MyTitleAreaDialog;
@@ -95,19 +99,26 @@ public class KeyBindingPart {
 			Command command = commandService.getCommand(cmdid);
 			if (!command.isDefined())
 				return;
-			ParameterizedCommand exitCommand = commandService.createCommand(cmdid, null);
+			ParameterizedCommand cmd = commandService.createCommand(cmdid, null);
 			if (cmdid.equals(S_CMD_EXIT_ID))
 				handlerService.activateHandler(cmdid, new ExitHandler());
 			else if (cmdid.equals(S_CMD_LOGIN_ID))
 				handlerService.activateHandler(cmdid, new EnterCredentialsHandler());
 			else if (cmdid.endsWith(S_CMD_WIZARD_ID))
 				handlerService.activateHandler(cmdid, new WizardHandler());
-			if (!handlerService.canExecute(exitCommand))
+			if (!handlerService.canExecute(cmd))
 				return;
-			handlerService.executeHandler(exitCommand);
+			handlerService.executeHandler(cmd);
 		} catch (Exception ex) {
 			throw new RuntimeException("command with id " + cmdid + " not found");
 		}
+	}
+
+	@Inject
+	@Optional
+	public void partActivation(@UIEventTopic(UIEvents.UILifeCycle.ACTIVATE) Event event) {
+		// do something
+		System.out.println("Got Part");
 	}
 
 }

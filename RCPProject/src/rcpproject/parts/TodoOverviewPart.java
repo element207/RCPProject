@@ -2,7 +2,6 @@
 package rcpproject.parts;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -12,11 +11,12 @@ import javax.inject.Named;
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.beans.BeansObservables;
 import org.eclipse.core.databinding.observable.list.IObservableList;
-import org.eclipse.core.databinding.observable.list.WritableList;
 import org.eclipse.core.databinding.observable.map.IObservableMap;
 import org.eclipse.core.databinding.property.Properties;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.di.UIEventTopic;
+import org.eclipse.e4.ui.services.EMenuService;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
@@ -34,18 +34,21 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 
+import rcpproject.events.MyEventConstants;
+import rcpproject.model.ITodoService;
 import rcpproject.model.Todo;
 
 public class TodoOverviewPart {
 	private DataBindingContext m_bindingContext;
 	private Button btnLoadData;
 	private TableViewer viewer;
-	private WritableList writableList;
 
 	@Inject
 	ESelectionService selectionService;
 
-	Todo todo = new Todo(1, "Summary", "Description", true, new Date());
+	@Inject
+	ITodoService todoService;
+
 	List<Object> todoList = new ArrayList<>();
 	private TableColumn tblclmnId;
 	private TableColumn tblclmnDueDate;
@@ -54,9 +57,8 @@ public class TodoOverviewPart {
 	private TableViewerColumn columnDone;
 
 	@PostConstruct
-	public void createControls(Composite parent) {
-		for (int i = 1; i < 6; i++) {
-			Todo todo = new Todo(i, "Summary" + i, "Description" + i, true, new Date());
+	public void createControls(Composite parent, EMenuService menuService) {
+		for (Todo todo : todoService.getTodos()) {
 			todoList.add(todo);
 		}
 		parent.setLayout(new GridLayout(1, false));
@@ -66,6 +68,7 @@ public class TodoOverviewPart {
 		// ...
 		// ...
 		viewer = new TableViewer(parent, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL | SWT.FULL_SELECTION);
+		menuService.registerContextMenu(viewer.getControl(), "rcpproject.popupmenu.table");
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 			public void selectionChanged(SelectionChangedEvent event) {
 				IStructuredSelection selection = (IStructuredSelection) viewer.getSelection();
@@ -106,10 +109,13 @@ public class TodoOverviewPart {
 		m_bindingContext = initDataBindings();
 	}
 
-	public void updateViewer(List<Todo> list) {
+	@Inject
+	@Optional
+	public void getNotified(@UIEventTopic(MyEventConstants.TOPIC_TODO_ALLTOPICS) Todo topic) {
 		if (viewer != null) {
-			writableList.clear();
-			writableList.addAll(list);
+			todoList.clear();
+			todoList.addAll(todoService.getTodos());
+			m_bindingContext = initDataBindings();
 		}
 	}
 

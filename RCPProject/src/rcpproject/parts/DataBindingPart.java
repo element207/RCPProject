@@ -11,7 +11,11 @@ import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.beans.BeanProperties;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.ui.di.UIEventTopic;
+import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.services.IServiceConstants;
+import org.eclipse.e4.ui.workbench.UIEvents;
+import org.eclipse.e4.ui.workbench.UIEvents.EventTags;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
@@ -22,6 +26,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.DateTime;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
+import org.osgi.service.event.Event;
 
 import rcpproject.model.Todo;
 
@@ -106,8 +111,18 @@ public class DataBindingPart {
 	@Inject
 	public void setTodo(@Optional @Named(IServiceConstants.ACTIVE_SELECTION) Todo todo) {
 		if (todo != null && this.m_bindingContext != null) {
-			this.todo = todo.copy();
-			updateUserInterface(todo);
+			this.todo = todo;
+
+			/*
+			 * Ensure that you call the dispose() method on your instance of the
+			 * DataBindingContext before creating a new binding. Otherwise the
+			 * binding between the user interface widgets and the old Todo
+			 * objects stays active. A new Todo will update the user interface
+			 * and the user interface binding will update all the old Todo
+			 * objects, which is not what you want.
+			 */
+			m_bindingContext.dispose();
+			m_bindingContext = initDataBindings();
 			;
 		}
 	}
@@ -148,10 +163,15 @@ public class DataBindingPart {
 		return bindingContext;
 	}
 
-	private void updateUserInterface(Todo todo) {
-		this.txtSummary.setText(todo.getSummary());
-		this.txtDescription.setText(todo.getDescription());
-		this.btnDone.setSelection(todo.isDone());
-		this.dateTime.setDate(1978, 1, 7);
+	@Inject
+	@Optional
+	public void partActivation(@UIEventTopic(UIEvents.UILifeCycle.ACTIVATE) Event event) {
+		// do something
+		Object element = event.getProperty(EventTags.ELEMENT);
+		if (!(element instanceof MPart)) {
+			return;
+		}
+		MPart part = (MPart) element;
+		System.out.println("Part activited: " + part.getLabel());
 	}
 }

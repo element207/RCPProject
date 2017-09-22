@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="RCPProject.contribute.fragment"
+         point="org.eclipse.e4.workbench.model">
+      <fragment
+            uri="fragment.e4xmi">
+      </fragment>
+      <processor
+            apply="always"
+            beforefragment="false"
+            class="RCPProject.contribute.processors.MenuProcessor">
+         <element
+               id="rcpproject.menu.file">
+         </element>
+      </processor>
+   </extension>
+
+</plugin>
