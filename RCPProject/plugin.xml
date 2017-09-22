@@ -12,6 +12,10 @@
                name="appName"
                value="RCPProject">
          </property>
+         <property
+               name="lifeCycleURI"
+               value="bundleclass://RCPProject/rcpproject.lifecycle.Manager">
+         </property>
       </product>
    </extension>
 
