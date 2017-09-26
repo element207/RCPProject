@@ -29,6 +29,7 @@
         <children xsi:type="menu:HandledMenuItem" xmi:id="_aSh8oJzuEeev4exnfNHJrA" elementId="rcpproject.handledmenuitem.file.exit" label="Eixt" command="_5eZ0sJzsEeev4exnfNHJrA"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_XR0QoJ6OEeev4exnfNHJrA" elementId="rcpproject.handledmenuitem.createpart" label="Create Part" command="_RAqboJ6OEeev4exnfNHJrA"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_WP5tUJ9iEeeLf7ns2HVT9w" elementId="rcpproject.handledmenuitem.delete" label="Delete" command="_v5C8oJ9gEeeLf7ns2HVT9w"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_OODJAKHOEeeLf7ns2HVT9w" elementId="rcpproject.handledmenuitem.evaluateextensions" label="Evaluate extensions" command="_SeIeIKHOEeeLf7ns2HVT9w"/>
       </children>
       <children xsi:type="menu:Menu" xmi:id="_3NTSoJ6KEeev4exnfNHJrA" elementId="rcpproject.menu.perspective" label="Perspective">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_50rkkJ6KEeev4exnfNHJrA" elementId="rcpproject.handledmenuitem.switchperspective" label="Swich Perspective" command="_BDhw4J6LEeev4exnfNHJrA"/>
@@ -47,6 +48,7 @@
   <handlers xmi:id="_EMxZwJ6LEeev4exnfNHJrA" elementId="rcpproject.handler.switchperspective" contributionURI="bundleclass://RCPProject/rcpproject.handlers.PerspectiveSwitchHandler" command="_BDhw4J6LEeev4exnfNHJrA"/>
   <handlers xmi:id="_DUBFcJ6OEeev4exnfNHJrA" elementId="rcpproject.handler.dynamic" contributionURI="bundleclass://RCPProject/rcpproject.handlers.DynamicPartHandler" command="_RAqboJ6OEeev4exnfNHJrA"/>
   <handlers xmi:id="_fcCswJ9iEeeLf7ns2HVT9w" elementId="rcpproject.handler.deletetodo" contributionURI="bundleclass://RCPProject/rcpproject.handlers.RemoveTodoHandler" command="_v5C8oJ9gEeeLf7ns2HVT9w"/>
+  <handlers xmi:id="_Vp0-EKHOEeeLf7ns2HVT9w" elementId="rcpproject.handler.2" contributionURI="bundleclass://RCPProject.definition/RCPProject.definition.EvaluateContributionsHandler" command="_SeIeIKHOEeeLf7ns2HVT9w"/>
   <bindingTables xmi:id="_piawwJz6Eeev4exnfNHJrA" elementId="rcpproject.bindingtable.0" bindingContext="_c3AF2cjYEeSyMNYR5xypkQ">
     <bindings xmi:id="_t5MjwJz6Eeev4exnfNHJrA" elementId="rcpproject.keybinding.exit" keySequence="M1+X" command="_5eZ0sJzsEeev4exnfNHJrA"/>
   </bindingTables>
@@ -63,6 +65,7 @@
     <parameters xmi:id="_VjBzkJ6OEeev4exnfNHJrA" elementId="rcpproject.commandparameter.0" name="Command Parameter 0"/>
   </commands>
   <commands xmi:id="_v5C8oJ9gEeeLf7ns2HVT9w" elementId="rcpproject.command.deletetodo" commandName="Delete Todo"/>
+  <commands xmi:id="_SeIeIKHOEeeLf7ns2HVT9w" elementId="rcpproject.command.evaluateexten" commandName="Evaluate Exten"/>
   <addons xmi:id="_c3AF0sjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_c3AF08jYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_c3AF1MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>

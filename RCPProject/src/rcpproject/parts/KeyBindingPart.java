@@ -9,6 +9,7 @@ import org.eclipse.core.commands.ParameterizedCommand;
 import org.eclipse.e4.core.commands.ECommandService;
 import org.eclipse.e4.core.commands.EHandlerService;
 import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.ui.di.UIEventTopic;
 import org.eclipse.e4.ui.workbench.UIEvents;
 import org.eclipse.jface.window.Window;
@@ -121,4 +122,15 @@ public class KeyBindingPart {
 		System.out.println("Got Part");
 	}
 
+	@Inject
+	@Optional
+	public void trackUserSettings(@Preference(value = "user") String user) {
+		System.out.println("New user: " + user);
+	}
+
+	@Inject
+	@Optional
+	public void trackPasswdSettings(@Preference(value = "password") String password) {
+		System.out.println("New password: " + password);
+	}
 }

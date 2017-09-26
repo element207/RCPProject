@@ -40,6 +40,7 @@ public class MenuProcessor {
 		}
 		// now add a new menu entry
 		MDirectMenuItem menuItem = MMenuFactory.INSTANCE.createDirectMenuItem();
+		menuItem.setElementId("RCPProject.contribute.exit");
 		menuItem.setLabel("Another Exit");
 		menuItem.setContributionURI("bundleclass://" + "RCPProject.contribute/" + ExitHandlerWithCheck.class.getName());
 		menu.getChildren().add(menuItem);

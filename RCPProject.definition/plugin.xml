@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="rcpproject.definition.greeter" name="Greeter" schema="schema/rcpproject.definition.greeter.exsd"/>
+
+</plugin>
