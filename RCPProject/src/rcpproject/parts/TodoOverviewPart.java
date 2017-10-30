@@ -26,13 +26,18 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
+import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
+
+import com.xyz.article.wizards.HolidayWizard;
 
 import rcpproject.events.MyEventConstants;
 import rcpproject.model.ITodoService;
@@ -63,6 +68,19 @@ public class TodoOverviewPart {
 		}
 		parent.setLayout(new GridLayout(1, false));
 		btnLoadData = new Button(parent, SWT.PUSH);
+		btnLoadData.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+
+				HolidayWizard wizard = new HolidayWizard();
+				WizardDialog dialog = new WizardDialog(parent.getShell(), wizard);
+				dialog.create();
+				if (dialog.open() == WizardDialog.OK) {
+					System.out.println("Wizard completed.");
+				}
+
+			}
+		});
 		btnLoadData.setText("Load Data");
 		// more code, e.g. your search box
 		// ...
